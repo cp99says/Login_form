@@ -12,7 +12,7 @@
 <body>
 	<span style="font-size: 2em">Login page</span>
 	<div class="form1">
-       <form action="get1.php" method="post" >
+       <form action="get1.php" method="post" id="myform" >
     	<div class="inputbox">
     		<label >Username</label>
     		<input type="text" name="username" class="input">    		
@@ -23,10 +23,28 @@
      	 </div>		<br><br>
     	<div class="inputbox">	
     		<div class="submit-button">
-    	<input name="submit" type="submit" value="Login">
+    	<input name="submit" type="submit" value="Login" id="submit">
 
             </div>
         </form>
     </div>
+    <script type="text/javascript">
+    	$(document).ready(function(){
+             var form=$('#myform');
+			 $('submit').click(function(){
+                    $.ajax({
+                       url: form.attr("action");
+                      type: 'post',
+					  data:$("#myform :input").serialize(),
+
+
+                       success: function(data)
+					   {
+						   console.log(data);
+					   }
+					});
+			 });
+		});
+    </script>
 </body>
 </html>     
