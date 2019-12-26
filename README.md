@@ -1,5 +1,5 @@
 # Login_form
-It requires xampp to be installed in your computer.
+It requires xampp(or any other local server) to be installed in your computer.
 Your username and passwordof database must be changed accordingly in connect.php file after changing the password of your phpmyadmin.
 Now register using html_form.php .
 After registering through html_form.php, you can sign in using signin_form1.php
